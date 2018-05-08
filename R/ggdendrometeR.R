@@ -2,7 +2,7 @@
 #'
 #'  Add on to the dendrometeR package from CRAN that allows for more simple plotting with ggplot2
 #'
-#' Includes one functions:
+#' Includes functions:
 #' \link{all_cycleStats}
 #' \link{gg_cellphase}
 #' @docType package
