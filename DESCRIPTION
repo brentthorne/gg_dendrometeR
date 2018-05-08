@@ -6,8 +6,9 @@ Author: Brent Thorne
 Maintainer: The package maintainer <brent.thorne18@gmail.com>
 Description: Add on to the dendrometeR package from CRAN that allows for more simple plotting with ggplot2.
 License: GPL-2
+Depends:
+  ggplot2 (>= 2.0),
+  dendrometeR (>= 1.0.0)
 Encoding: UTF-8
 LazyData: true
-Imports: dendrometeR, ggplot2
-Suggests: tidyverse, rmarkdown 
 RoxygenNote: 6.0.1

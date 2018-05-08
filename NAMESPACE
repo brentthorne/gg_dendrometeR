@@ -2,3 +2,4 @@
 
 export(all_cycleStats)
 import(dendrometeR)
+import(ggplot2)
