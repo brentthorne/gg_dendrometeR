@@ -8,4 +8,6 @@ Description: Add on to the dendrometeR package from CRAN that allows for more si
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
+Imports: dendrometeR, ggplot2
+Suggests: tidyverse, rmarkdown 
 RoxygenNote: 6.0.1

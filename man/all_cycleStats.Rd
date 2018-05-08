@@ -7,13 +7,11 @@
 all_cycleStats(dm.gpf, dm.phase, smooth.param = 1)
 }
 \arguments{
-\item{dm.gpf}{a \code{data.frame} with either gap-free or gap-filled dendrometer series as produced by \code{\link{fill_gaps}}.}
+\item{dm.gpf}{a \code{data.frame} with either gap-free or gap-filled dendrometer series as produced by \code{\link[dendrometeR]{fill_gaps}}.}
 
-\item{dm.phase}{a \code{data.frame} with numbers indicating the different stem-cyclic phases. Output of \code{\link{phase_def}}.}
+\item{dm.phase}{a \code{data.frame} with numbers indicating the different stem-cyclic phases. Output of \code{\link[dendrometeR]{phase_def}}.}
 
 \item{smooth.param}{a \code{numeric} specifying the degree of smoothing. Defaults to 1 (no smoothing).}
-
-\item{sensor}{a \code{numeric} specifying the sensor to be used in the function. Defaults to 1 (first column in both \code{data.frames}).}
 }
 \value{
 The function returns a \code{data.frame} containing the following summary statistics:
@@ -29,15 +27,16 @@ The function returns a \code{data.frame} containing the following summary statis
 \item{max}{maximum stem size within each phase.}
 }
 \description{
-Calculate cycleStats using the \code{\link{dendrometeR::cycleStats}} and produce single df for all sensor in you data. The dendrometeR package
+Calculate cycleStats using the \link[dendrometeR]{cycle_stats} and produce single df for all sensor in you data. The dendrometeR package
 does not allow for this currently
 }
 \examples{
+\donttest{
 library(dendrometeR)
 data(dmCD)
 dm.phase <- phase_def(dmCD)
 cycleStats.all <- all_cycleStats(dmCD,dm.phase)
-
+}
 
 }
 \author{
