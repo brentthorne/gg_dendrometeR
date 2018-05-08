@@ -11,7 +11,7 @@ Add on to the dendrometeR package from CRAN that allows for more simple plotting
 \details{
 Includes functions:
 \link{all_cycleStats}
-\link{gg_cellphase}
+\link{gg_cellphase_data}
 }
 \author{
 Brent Thorne \email{brent.thorne18@gmail.com}

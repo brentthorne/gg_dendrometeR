@@ -4,7 +4,7 @@
 #'
 #' Includes functions:
 #' \link{all_cycleStats}
-#' \link{gg_cellphase}
+#' \link{gg_cellphase_data}
 #' @docType package
 #' @author Brent Thorne \email{brent.thorne18@gmail.com}
 #' @name ggdendrometeR

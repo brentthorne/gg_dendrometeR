@@ -2,40 +2,36 @@
 % Please edit documentation in R/gg_cellphase.R
 \name{gg_cellphase}
 \alias{gg_cellphase}
-\title{Create's a ggplot friendly data table for the dm.phase product.}
+\title{Create's a ggplot for dendrometer cell phase data.}
 \usage{
-gg_cellphase(dm.gpf, resolution = dendro.resolution(dm.gpf),shapeSensitivity = 0.6, minmaxDist = 0.2,minmaxSD = 2, radialIncrease = "max", na.omit = TRUE)
+gg_cellphase(gg_cellphase_data, start.day, end.day, date_breaks, date_labels, type = "all")
 }
 \arguments{
-\item{dm.gpf}{a \code{data.frame} with either gap-free or gap-filled dendrometer series as produced by \code{\link[dendrometeR]{fill_gaps}}.}
+\item{start.day}{a \code{timestamp} specifying the begining of dendrometer data to be used in the final plot (timestamp format is "%Y-%m-%d %H:%M:%S").}
 
-\item{resolution}{a \code{numeric} specifying the resolution of the dendrometer data in seconds. Defaults to the resolution of \code{dm.gpf} as calculated using \code{\link[dendrometeR]{dendro.resolution}}.}
+\item{end.day}{a \code{timestamp} specifying the end of dendrometer data to be used in the final plot (timestamp format is "%Y-%m-%d %H:%M:%S").}
 
-\item{shapeSensitivity}{a \code{numeric} specifying a time window, defined as proportion of a single day. Within this time window possible extrema points (i.e. minimum and maximum) in dendrometer measurements are searched for. Defaults to 0.6 (60\% of a day). See details for further explanation.}
+\item{date_breaks}{a \code{string} giving the distance between breaks like "2 weeks", or "10 years"d day).}
 
-\item{minmaxDist}{a \code{numeric} specifying the minimum temporal distance between consecutive minimum and maximum points (i.e. in the x direction). Defaults to 0.2 (20\% of a day).}
+\item{date_labels}{a \code{string} giving the formatting specification for the labels. Codes are defined in \link[base]{strftime}. If both labels and date_labels are specified, date_labels wins.}
 
-\item{minmaxSD}{a \code{numeric} specifying the minimum difference between consecutive minimum and maximum points expressed as a number of standard deviations (i.e. in the y direction). Defaults to 2.}
-
-\item{radialIncrease}{a \code{character} string of \code{"max", "min", "mid"}, specifying when the stem-radius increment phase should start, with \code{"max"} as the most, and \code{"min"} as the least conservative approach; \code{"mid"} is in between. See details for further explanation.}
-
-\item{na.omit}{a \code{logical opperator} statement of either \code{TRUE} or \code{FALSE}, specifying weather or not to remove \code{NA} values from final dataset. The default is set to \code{na.omit = TRUE}.}
+\item{type}{a \code{string} specifying either 1) the default \code{type = "all"}: a single plot with all dendrometer data on it, or 2) \code{type = "facet"}: if the plot should be displayed based on the number of dendrometers used within the users origional data frame.}
 }
 \value{
-The function returns a \code{data.frame} containing the following summary statistics:
-\item{dmID}{dendrometer ID.}
-\item{Phase}{cyclic phase (1: contraction, 2: expansion, 3: stem-radius increment, 4: full cycle).}
-\item{timestamp}{timestamp indicating the date and time of phase stage.}
+The function returns a \code{geom_point} plot or can be stored as an object.
 }
 \description{
-Transform the phase data into a single ggplot2 friendly data frame.
+Can be displayed as a single plot or as a facet wrap for each unique dendrometer.
 }
 \examples{
 \donttest{
 library(dendrometeR)
 data(dmCD)
 dm.phase <- phase_def(dmCD)
-dm.cellphase <- gg_cellphase(dmCD)
+dm.cellphase <- gg_cellphase_data(dmCD)
+
+#plot all on one
+gg_cellphase(gg_cellphase_data = dm.cellphase)
 }
 
 }

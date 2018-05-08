@@ -2,5 +2,6 @@
 
 export(all_cycleStats)
 export(gg_cellphase)
+export(gg_cellphase_data)
 import(dendrometeR)
 import(tidyverse)
