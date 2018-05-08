@@ -24,7 +24,7 @@
 #' \item{max}{maximum stem size within each phase.}
 #'
 #' @import dendrometeR
-#' @import ggplot2
+#' @import tidyverse
 #'
 #' @examples
 #' \donttest{
