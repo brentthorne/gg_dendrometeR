@@ -68,6 +68,8 @@ gg_cellphase <- function(gg_cellphase_data,
               facet_wrap(~dmID)
             print(ggcellphase)
 
-           }else{}
+    }else{
+             warning("Please select 'all' or 'facet' for argument 'type='.")
+           }
         }
 }
