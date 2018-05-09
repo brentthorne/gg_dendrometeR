@@ -70,7 +70,7 @@ gg_cellphase_data <- function(dm.gpf, resolution = dendro.resolution(dm.gpf),
     }
 
   gg.data <- select(gg.data, dmID, timestamp, Phase, amplitude)
-
+  gg.data$timestamp <- strptime(gg.data$timestamp, format = "%Y-%m-%d %H:%M:%S")
   return(gg.data)
 
 }

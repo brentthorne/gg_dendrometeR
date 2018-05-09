@@ -11,13 +11,13 @@ gg_cellphase(gg_cellphase_data, start.day, end.day, date_breaks, date_labels, ty
 
 \item{start.day}{a \code{timestamp} specifying the begining of dendrometer data to be used in the final plot timestamp format is (\code{\%Y-\%m-\%d \%H:\%M:\%S} format).}
 
-\item{end.day}{a \code{timestamp} specifying the end of dendrometer data to be used in the final plot (timestamp format is (\code{\%Y-\%m-\%d \%H:\%M:\%S} format)).}
+\item{end.day}{a \code{timestamp} specifying the end of dendrometer data to be used in the final plot timestamp format is (\code{\%Y-\%m-\%d \%H:\%M:\%S} format).}
 
-\item{date_breaks}{a \code{string} giving the distance between breaks like "2 weeks", or "10 years"d day).}
+\item{date.breaks}{a \code{string} giving the distance between breaks such as: "2 weeks", or "10 years".}
 
-\item{date_labels}{a \code{string} giving the formatting specification for the labels. Codes are defined in \link[base]{strftime}. If both labels and date_labels are specified, date_labels wins.}
+\item{date.labels}{a \code{string} giving the formatting specification for the labels. Codes are defined in \link[base]{strftime}. If both labels and date_labels are specified, date_labels wins.}
 
-\item{type}{a \code{string} specifying either 1) the default \code{type = "all"}: a single plot with all dendrometer data on it, or 2) \code{type = "facet"}: if the plot should be displayed based on the number of dendrometers used within the users origional data frame.}
+\item{type}{a \code{string} specifying either 1) the default \code{type = "all"}; a single plot with all dendrometer data on it, or 2) \code{type = "facet"}; if the plot should be displayed based on the number of dendrometers used within the users origional data frame.}
 }
 \value{
 The function returns a \code{geom_point} plot or can be stored as an object.
@@ -27,13 +27,20 @@ Can be displayed as a single plot or as a facet wrap for each unique dendrometer
 }
 \examples{
 \donttest{
+#plot all on one
 library(dendrometeR)
 data(dmCD)
 dm.phase <- phase_def(dmCD)
 dm.cellphase <- gg_cellphase_data(dmCD)
-
-#plot all on one
 gg_cellphase(gg_cellphase_data = dm.cellphase)
+
+#plot facet for each dendrometer
+library(dendrometeR)
+data(dmED)
+dmED <- fill_gaps(dmED)
+dm.phase <- phase_def(dmED)
+dm.cellphase <- gg_cellphase_data(dmED)
+gg_cellphase(gg_cellphase_data = dm.cellphase, type = "facet")
 }
 
 }
