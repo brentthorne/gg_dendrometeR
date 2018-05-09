@@ -4,14 +4,14 @@
 #'
 #' @usage gg_cellphase(gg_cellphase_data, start.day, end.day, date_breaks, date_labels, type = "all")
 #'
-#' @param gg_cellphase_data a \code{data.frame} with either gap-free or gap-filled dendrometer phase series as produced by \link{gg_cellphase_data}}.
-#' @param start.day a \code{timestamp} specifying the begining of dendrometer data to be used in the final plot (timestamp format is "%Y-%m-%d %H:%M:%S").
-#' @param end.day a \code{timestamp} specifying the end of dendrometer data to be used in the final plot (timestamp format is "%Y-%m-%d %H:%M:%S").
-#' @param date_breaks a \code{string} giving the distance between breaks like "2 weeks", or "10 years"d day).
+#' @param gg_cellphase_data a \code{data.frame} with either gap-free or gap-filled dendrometer phase series as produced by \link{gg_cellphase_data}.
+#' @param start.day a \code{timestamp} specifying the begining of dendrometer data to be used in the final plot timestamp format is (\code{\%Y-\%m-\%d \%H:\%M:\%S} format).
+#' @param end.day a \code{timestamp} specifying the end of dendrometer data to be used in the final plot timestamp format is (\code{\%Y-\%m-\%d \%H:\%M:\%S} format).
+#' @param date_breaks a \code{string} giving the distance between breaks such as: "2 weeks", or "10 years".
 #' @param date_labels a \code{string} giving the formatting specification for the labels. Codes are defined in \link[base]{strftime}. If both labels and date_labels are specified, date_labels wins.
-#' @param type a \code{string} specifying either 1) the default \code{type = "all"}: a single plot with all dendrometer data on it, or 2) \code{type = "facet"}: if the plot should be displayed based on the number of dendrometers used within the users origional data frame.
+#' @param type a \code{string} specifying either 1) the default \code{type = "all"}; a single plot with all dendrometer data on it, or 2) \code{type = "facet"}; if the plot should be displayed based on the number of dendrometers used within the users origional data frame.
 #'
-#' @author Brent Thorne
+#'@author Brent Thorne
 #'
 #' @return The function returns a \code{geom_point} plot or can be stored as an object.
 #'

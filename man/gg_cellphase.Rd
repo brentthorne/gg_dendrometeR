@@ -7,9 +7,11 @@
 gg_cellphase(gg_cellphase_data, start.day, end.day, date_breaks, date_labels, type = "all")
 }
 \arguments{
-\item{start.day}{a \code{timestamp} specifying the begining of dendrometer data to be used in the final plot (timestamp format is "%Y-%m-%d %H:%M:%S").}
+\item{gg_cellphase_data}{a \code{data.frame} with either gap-free or gap-filled dendrometer phase series as produced by \link{gg_cellphase_data}.}
 
-\item{end.day}{a \code{timestamp} specifying the end of dendrometer data to be used in the final plot (timestamp format is "%Y-%m-%d %H:%M:%S").}
+\item{start.day}{a \code{timestamp} specifying the begining of dendrometer data to be used in the final plot timestamp format is (\code{\%Y-\%m-\%d \%H:\%M:\%S} format).}
+
+\item{end.day}{a \code{timestamp} specifying the end of dendrometer data to be used in the final plot (timestamp format is (\code{\%Y-\%m-\%d \%H:\%M:\%S} format)).}
 
 \item{date_breaks}{a \code{string} giving the distance between breaks like "2 weeks", or "10 years"d day).}
 
